@@ -14,5 +14,6 @@ PLANNING
 11. errors need to be alerted and also possible to try again without crashing or found in no mans land.
 12. p3clients
 13. requiremnts to run> imports and also isntall pip3, google ouath gsprad (pip3 install gspread google-auth)
+14. used documentation https://docs.gspread.org/en/latest/user-guide.html
 
 

@@ -1,6 +1,7 @@
 # we need gspread in order to access the sheet.
 import gspread
 from google.oauth2.service_account import Credentials
+from pprint import pprint as pp
 # the scope says which apis can be utilized
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -26,8 +27,36 @@ jenny_data = jenny.get_all_values()
 
 #print(SHEET['sheets'])
 
+# in order to fetch the worksheet sinsde the sheet as list we use this below. 
 worksheet_list = SHEET.worksheets()
 
-print(worksheet_list)
+#pp is for multiplelien lists
+#print(worksheet_list)
+print('Avaialble client worksheets...\n')
+pp(worksheet_list)
 
+
+# funciton with placeholder for varibale. tell user to pick a worksheet from the list. 
+# for loop. for names inside the workshee, take them out and put in new list
+
+
+# in list worksheet_list, create seprate vlaue s for strings inside '' push to new list. 
+
+
+#str_worksheet = ''.join([worksheet_list])
+
+#print(str_worksheet)
+# convert from worksheet to string so we can work with it easier.
+ws_names = ','.join(str(v) for v in worksheet_list)
+
+#print(ws_names)
+
+print(ws_names)
+
+for sheet in worksheet_list:
+    print(sheet.title)
+
+#print(ws_names.split(' '))
+
+#sp_test = 
 
