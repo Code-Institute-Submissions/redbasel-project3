@@ -18,7 +18,7 @@ SHEET = GSPREAD_CLIENT.open('p3clients')
 
 # in order to fetch the worksheet sinsde the sheet as list we use this below. 
 #worksheet_list = SHEET.worksheets()
-#print('Welcome, here you can find client health data and have health metrics calculated \n Avaialble client worksheets...\n')
+print('Welcome, here you can find client health data and have health metrics calculated \n Avaialble client worksheets...\n')
 
 # funciton with placeholder for varibale. tell user to pick a worksheet from the list. 
 # for loop. for names inside the workshee, take them out and put in new list
@@ -108,7 +108,9 @@ def bmi_check_final():
         print(f"{select_worksheet} is now in the obese range")
     else:
         print(f"{select_worksheet} should see a physician")
+
 """
+
 def bmi_check():
     select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi = to_be_utilized()
     if 18.5 > start_bmi:
@@ -163,45 +165,28 @@ def bmi_check():
         print(f"{select_worksheet} should've seen a physician")
 
 
-def allDataClient():
-    select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi = to_be_utilized()
-    pp(chosen_ws_all_values)
-
-
 def toolMenu():
     print("\nWelcome to the tool menu, these tools are at your disposal")
     print("1: Analyze the clients percentage change of their body measurements")
     print("2: Analyze the clients past and present BMI data")
     print("3: Show all the data avaialable")
-    print('available clients:')
-    worksheet_list = SHEET.worksheets()
-    ws_names = ','.join(str(v) for v in worksheet_list)
-    for sheet in worksheet_list:
-        print(sheet.title)
+    print("4: Re-run the program")
     selection = int(input("Please enter your selection, between 1-3:\n"))
     if selection==1:
         health_measurements()
-        runAgain()
+        toolMenu()
     elif selection==2:
         #print(f"{select_worksheet} BMI was:{start_bmi} and now it is {final_bmi}")
         bmi_check()
-        runAgain()
+        toolMenu()
     elif selection==3:
-        allDataClient()
-        runAgain()
+        pp(chosen_ws_all_values)
+        toolMenu()
     else:
         print("invalid choice. enter between 1-3")
         toolMenu()
 
-def runAgain():
-    answer = input('Do you wish to continue using the program, type "yes" in that case otherwise "no"')
-    if answer== 'yes':
-        toolMenu()
-    elif answer == 'no':
-        print('Thank you for using the tool, hopefully it could assist you')
-    else:
-        print('Invalid input, please type again "yes" or "no"')
-        runAgain()
+
 
 
 """
@@ -213,10 +198,10 @@ def runAgain():
 
 """
 def main():
-   # worksheet_list = SHEET.worksheets()
-    #ws_names = ','.join(str(v) for v in worksheet_list)
-    #for sheet in worksheet_list:
-        #print(sheet.title)
+    worksheet_list = SHEET.worksheets()
+    ws_names = ','.join(str(v) for v in worksheet_list)
+    for sheet in worksheet_list:
+        print(sheet.title)
     #select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi = to_be_utilized()
     toolMenu()
     #return select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi
