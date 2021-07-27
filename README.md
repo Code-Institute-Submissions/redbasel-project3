@@ -18,3 +18,23 @@ PLANNING
 
 
 create a main fucnton whcih sets allthe variables and then executes the otehr funcitosn so in the menu we will simpy call th emenu funciton again. 
+
+
+**FEATURES**
+Following will explain eacch dnividual feature offered by the program and its intended use and benefit for the relevant parties.
+
+Existing features
+1.	Overview of all the available clients’ which records can be accessed, the function will print out the names individually of all the available worksheets inside the google sheet we are referring to. This is beneficial to the user as they will now which clients records are accessible and can be used with the tools.
+![Image showcasing the feature of available clients](docs/images/f1abc.png)
+2.	A tool menu which displays the available tools for the user to utilize. The functions allow for the data to be displayed and manipulated.  Firstly, the user is asked which tool they wish to utilize and secondly which client you wish to utilize that tool. 
+![tool menu showcasing to the user the different tools available](docs/images/f2tm.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+3.	Tool menu option#1. This function takes into account the chosen clients health measurements. It will take the first submitted record and compare it against the last submitted record and present the percentage change. This tells the user the change over time for the chosen client. It will also detail how the measurements have changed for each of the categories. 
+![print of client “jenny”’s data and her measurements](docs/images/op1.PNG)
+4.	Tool menu option #2 this function will calculate the clients past and present BMI, inform the user of how the past BMI score was to be interpreted and how the clients BMI fare today. 
+![print of client jennys BMI qualitative data](docs/images/op2.PNG)
+5.	Tool menu option #3 The third option shows all of the available data for the client from the worksheet. 
+![print of all the available data of client jenny](docs/images/op3.PNG)
+6.	After a menu option has been utilized the program will ask the user whether they wish to continue. 
+7.	When the user inputs a invalid input, the user will be prompted to try again. 
+
+
