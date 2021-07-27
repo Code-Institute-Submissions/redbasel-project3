@@ -18,3 +18,5 @@ PLANNING
 
 
 create a main fucnton whcih sets allthe variables and then executes the otehr funcitosn so in the menu we will simpy call th emenu funciton again. 
+
+![](docs/images/1terminal.PNG)
