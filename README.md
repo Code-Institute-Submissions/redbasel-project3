@@ -35,3 +35,30 @@ Existing features
 ![print of all the available data of client jenny](docs/images/op3.PNG)
 6.	After a menu option has been utilized the program will ask the user whether they wish to continue. 
 7.	When the user inputs a invalid input, the user will be prompted to try again. 
+
+
+**TESTING**
+The app is run via the terminal and has been tested using both chrome and firefox on desktop, using gitpod. 
+
+Testing that remains
+1. validate the code again once it is finished
+2. run it via heroku.
+
+Validator Testing
+
+
+
+
+**DEPLOYMENT**
+
+
+**CREDITS**
+
+Content
+
+The data used for the worksheet is based on client data but the names are made up. In order to have realistic data without comprimizing the integrity of the client. They have also been asked if its okay to use their data without their identity. 
+
+Media
+There is no real media used in this project, the only media si the screenshots in this very readme file, which ive take myself. 
+
+
