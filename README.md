@@ -56,7 +56,13 @@ Validator Testing
 
 Content
 
-The data used for the worksheet is based on client data but the names are made up. In order to have realistic data without comprimizing the integrity of the client. They have also been asked if its okay to use their data without their identity. 
+The data used for the worksheet is based on client data but the names are made up. In order to have realistic data without comprimizing the integrity of the client. They have also been asked if its okay to use their data without their identity. Additonal resources have been used, these include pip3, gspread and pprint
+
+Packages
+pip3 #in order to install the packages.
+gspread # to access the google sheets and manipulate.
+pprint # to better print tables inthe terminal to provide a better user experience. 
+
 
 Media
 There is no real media used in this project, the only media si the screenshots in this very readme file, which ive take myself. 
