@@ -64,7 +64,7 @@ start_row = chosen_ws_all_values[1]
 last_row = chosen_ws_all_values[-1]
 start_weight_test = terminal_chosen_worksheet.cell(2, 1)
 """
-
+#function that calculates the percentage change in the cleints health data over time, comparing the first measurement with the last. 
 def health_measurements():
     select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi = to_be_utilized()
     for x in range(4):
@@ -109,6 +109,7 @@ def bmi_check_final():
     else:
         print(f"{select_worksheet} should see a physician")
 """
+# this function calcualtes the bmi of the client. firstly their initial bmi value and secondly their final bmi vlaue. and it outputs to the client in which bmi range they were and which they are presently in.
 def bmi_check():
     select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi = to_be_utilized()
     if 18.5 > start_bmi:
@@ -162,12 +163,12 @@ def bmi_check():
     else:
         print(f"{select_worksheet} should've seen a physician")
 
-
+# this function prints the table of the client which the first row filled with the titles 
 def allDataClient():
     select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi = to_be_utilized()
     pp(chosen_ws_all_values)
 
-
+# this is the menu that the user will interact with initially and then return to again to continue using the other functions available. 
 def toolMenu():
     print("\nWelcome to the tool menu, these tools are at your disposal")
     print("1: Analyze the clients percentage change of their body measurements")
@@ -192,7 +193,7 @@ def toolMenu():
     else:
         print("invalid choice. enter between 1-3")
         toolMenu()
-
+# this function main task is once tooMenu finishes, ask if the user is finished or wish to utilize the menu once more
 def runAgain():
     answer = input('Do you wish to continue using the program, type "yes" in that case otherwise "no"')
     if answer== 'yes':
