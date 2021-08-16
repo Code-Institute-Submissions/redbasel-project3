@@ -19,9 +19,8 @@ PLANNING
 
 create a main fucnton whcih sets allthe variables and then executes the otehr funcitosn so in the menu we will simpy call th emenu funciton again. 
 
-
-**FEATURES**
-Following will explain eacch dnividual feature offered by the program and its intended use and benefit for the relevant parties.
+FEATURES
+Following will explain each individual feature offered by the program and its intended use and benefit for the relevant parties.
 
 Existing features
 1.	Overview of all the available clients’ which records can be accessed, the function will print out the names individually of all the available worksheets inside the google sheet we are referring to. This is beneficial to the user as they will now which clients records are accessible and can be used with the tools.
@@ -36,5 +35,36 @@ Existing features
 ![print of all the available data of client jenny](docs/images/op3.PNG)
 6.	After a menu option has been utilized the program will ask the user whether they wish to continue. 
 7.	When the user inputs a invalid input, the user will be prompted to try again. 
+
+
+**TESTING**
+The app is run via the terminal and has been tested using both chrome and firefox on desktop, using gitpod. 
+
+Testing that remains
+1. validate the code again once it is finished
+2. run it via heroku.
+
+Validator Testing
+
+
+
+
+**DEPLOYMENT**
+
+
+**CREDITS**
+
+Content
+
+The data used for the worksheet is based on client data but the names are made up. In order to have realistic data without comprimizing the integrity of the client. They have also been asked if its okay to use their data without their identity. Additonal resources have been used, these include pip3, gspread and pprint
+
+Packages
+pip3 #in order to install the packages.
+gspread # to access the google sheets and manipulate.
+pprint # to better print tables inthe terminal to provide a better user experience. 
+
+
+Media
+There is no real media used in this project, the only media si the screenshots in this very readme file, which ive take myself. 
 
 
