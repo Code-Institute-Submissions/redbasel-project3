@@ -65,9 +65,9 @@ and which they are presently in.
 
 def bmi_check():
     select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi = to_be_utilized()
-    if 18.5 > start_bmi:
+    if start_bmi < 18.5:
         bmi_interval_past = "underweight"
-        if 18.5 > final_bmi:
+        if final_bmi < 18.5:
             bmi_interval_present = "underweight"
         elif 18.5 <= final_bmi <= 24.9:
             bmi_interval_present = "healthy"
@@ -79,7 +79,7 @@ def bmi_check():
             bmi_interval_present = "beyond obese"
     elif 18.5 <= start_bmi <= 24.9:
         bmi_interval_past = "healthy"
-        if 18.5 > final_bmi:
+        if final_bmi < 18.5:
             bmi_interval_present = "underweight"
         elif 18.5 <= final_bmi <= 24.9:
             bmi_interval_present = "healthy"
@@ -91,7 +91,7 @@ def bmi_check():
             bmi_interval_present = "beyond obese"
     elif 25 <= start_bmi <= 29.9:
         bmi_interval_past = "overweight"
-        if 18.5 > final_bmi:
+        if final_bmi < 18.5:
             bmi_interval_present = "underweight"
         elif 18.5 <= final_bmi <= 24.9:
             bmi_interval_present = "healthy"
@@ -103,7 +103,7 @@ def bmi_check():
             bmi_interval_present = "beyond obese"
     elif 30 <= start_bmi <= 39.9:
         bmi_interval_past = "obese"
-        if 18.5 > final_bmi:
+        if final_bmi < 18.5:
             bmi_interval_present = "underweight"
         elif 18.5 <= final_bmi <= 24.9:
             bmi_interval_present = "healthy"
@@ -124,7 +124,7 @@ of which the first row is filled with the titles
 """
 
 
-def allDataClient():
+def all_data_client():
     select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi = to_be_utilized()
     pp(chosen_ws_all_values)
 
@@ -134,7 +134,7 @@ then return to again to continue using the other functions available.
 """
 
 
-def toolMenu():
+def tool_menu():
     print("\nWelcome to the tool menu, these tools are at your disposal")
     print("1: Analyze the clients percentage change in body measurements")
     print("2: Analyze the clients past and present BMI data")
@@ -148,34 +148,34 @@ def toolMenu():
         selection = int(input("Please enter your selection, between 1-3:\n"))
         if selection == 1:
             health_measurements()
-            runAgain()
+            run_again()
         elif selection == 2:
             bmi_check()
-            runAgain()
+            run_again()
         elif selection == 3:
-            allDataClient()
-            runAgain()
+            all_data_client()
+            run_again()
         else:
             print("invalid choice. enter between 1-3")
-            toolMenu()
+            tool_menu()
     except ValueError:
         print("Please, enter a valid selection, make sure its an integer")
-        runAgain()
+        run_again()
 """
-This function main task is once toolMenu finishes,
+This function main task is once tool_menu finishes,
 ask if the user is finished or wish to utilize the menu once more
  """
 
 
-def runAgain():
+def run_again():
     answer = input('To continue, type "yes" otherwise "no"')
     if answer == 'yes':
-        toolMenu()
+        tool_menu()
     elif answer == 'no':
         print('Thank you for using the tool, hopefully it could assist you')
     else:
         print('Invalid input, please type again "yes" or "no"')
-        runAgain()
+        run_again()
 """
 this is the function that starts the application,
 doing it this way makes it possible to add elements in the future
@@ -183,6 +183,6 @@ doing it this way makes it possible to add elements in the future
 
 
 def main():
-    toolMenu()
+    tool_menu()
 
 main()
