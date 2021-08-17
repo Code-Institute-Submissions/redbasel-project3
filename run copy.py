@@ -116,8 +116,8 @@ def bmi_check():
             bmi_interval_present = "beyond obese"
     else:
         bmi_interval_past = "beyond obese"
-        print(f"\n{select_worksheet} was in the {bmi_interval_past} range,")
-        print(f"now {select_worksheet} is in the {bmi_interval_present} range. \n")
+    print(f"\n{select_worksheet} was in the {bmi_interval_past} range,")
+    print(f"now {select_worksheet} is in the {bmi_interval_present} range. \n")
 
 """
 This function prints the table of the client,
