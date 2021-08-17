@@ -119,7 +119,7 @@ def bmi_check():
         bmi_interval_past = "beyond obese"
     print(f"\n{select_worksheet} was in the {bmi_interval_past} range,")
     print(f"now {select_worksheet} is in the {bmi_interval_present} range. \n")
-    run_again()
+    print("Press 'Enter' to continue if running via heroku... \n")
 
 """
 This function prints the table of the client,
@@ -130,7 +130,7 @@ of which the first row is filled with the titles
 def all_data_client():
     select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi = to_be_utilized()
     pp(chosen_ws_all_values)
-    run_again()
+    print("Press 'Enter' to continue if running via heroku... \n")
 
 """
 This is the menu that the user will interact with initially,
@@ -172,14 +172,14 @@ ask if the user is finished or wish to utilize the menu once more
 
 
 def run_again():
-    answer = input('To continue, type "yes" otherwise "no"')
+    answer = input('To continue, type "yes" otherwise "no" \n')
     if answer == 'yes':
         tool_menu()
     elif answer == 'no':
         print('Thank you for using the tool, hopefully it could assist you')
         exit()
     else:
-        print("Don't use uppercase or integers.")
+        print(" Don't use uppercase or integers.")
         run_again()
 """
 this is the function that starts the application,

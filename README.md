@@ -37,7 +37,7 @@ Existing features
 
 
 **TESTING**
-The app is run via the terminal and has been tested using both chrome and firefox on desktop, using gitpod and heroku. It is running as expected in the gitpod terminal. 
+The app is run via the terminal and has been tested using both chrome and firefox on desktop, using gitpod and heroku. It is running as expected in the gitpod terminal. When testing it was discovered that heroku to does not adequately run a function that is placed under a print statemetn. Due to this had to alter the code to take this in consideration and add a statemetn targeting heroku users without affeccting otehr users too much. To simply press enter to continue. this does trigger the error message, however. The error message was altered so that it is unobtrusive to the user experience, and more of a general instruction. 
 
 
 
