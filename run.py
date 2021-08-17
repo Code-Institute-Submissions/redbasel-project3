@@ -54,7 +54,6 @@ def health_measurements():
         percentage_change_test = int(((int(last_row[x])) - (int(start_row[x])))/(int(start_row[x])) * 100)
         header_row_x = header_row[x]
         print(f"the change in {header_row_x} is {percentage_change_test}%")
-    print("Press 'Enter' to continue if running via heroku... \n")
 
 """
 this function calcualtes the bmi of the client.
@@ -119,7 +118,6 @@ def bmi_check():
         bmi_interval_past = "beyond obese"
     print(f"\n{select_worksheet} was in the {bmi_interval_past} range,")
     print(f"now {select_worksheet} is in the {bmi_interval_present} range. \n")
-    print("Press 'Enter' to continue if running via heroku... \n")
 
 """
 This function prints the table of the client,
@@ -130,7 +128,6 @@ of which the first row is filled with the titles
 def all_data_client():
     select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi = to_be_utilized()
     pp(chosen_ws_all_values)
-    print("Press 'Enter' to continue if running via heroku... \n")
 
 """
 This is the menu that the user will interact with initially,
