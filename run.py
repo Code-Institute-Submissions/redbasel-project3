@@ -54,6 +54,7 @@ def health_measurements():
         percentage_change_test = int(((int(last_row[x])) - (int(start_row[x])))/(int(start_row[x])) * 100)
         header_row_x = header_row[x]
         print(f"the change in {header_row_x} is {percentage_change_test}%")
+        run_again()
 
 """
 this function calcualtes the bmi of the client.
@@ -116,8 +117,9 @@ def bmi_check():
             bmi_interval_present = "beyond obese"
     else:
         bmi_interval_past = "beyond obese"
-        print(f"\n{select_worksheet} was in the {bmi_interval_past} range,")
-        print(f"now {select_worksheet} is in the {bmi_interval_present} range. \n")
+    print(f"\n{select_worksheet} was in the {bmi_interval_past} range,")
+    print(f"now {select_worksheet} is in the {bmi_interval_present} range. \n")
+    run_again()
 
 """
 This function prints the table of the client,
@@ -128,6 +130,7 @@ of which the first row is filled with the titles
 def all_data_client():
     select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi = to_be_utilized()
     pp(chosen_ws_all_values)
+    run_again()
 
 """
 This is the menu that the user will interact with initially,
@@ -149,13 +152,13 @@ def tool_menu():
         selection = int(input("Please enter your selection, between 1-3:\n"))
         if selection == 1:
             health_measurements()
-            run_again()
+            #run_again()
         elif selection == 2:
             bmi_check()
-            run_again()
+            #run_again()
         elif selection == 3:
             all_data_client()
-            run_again()
+            #run_again()
         else:
             print("invalid choice. enter between 1-3")
             tool_menu()
