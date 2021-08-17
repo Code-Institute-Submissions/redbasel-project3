@@ -1,9 +1,3 @@
-
-13x. requiremnts to run> imports and also isntall pip3, google ouath gsprad (pip3 install gspread google-auth)
-14. used documentation https://docs.gspread.org/en/latest/user-guide.html
-
-
-
 FEATURES
 Following will explain each individual feature offered by the program and its intended use and benefit for the relevant parties.
 
@@ -43,20 +37,20 @@ Existing features
 
 
 **TESTING**
-The app is run via the terminal and has been tested using both chrome and firefox on desktop, using gitpod. 
+The app is run via the terminal and has been tested using both chrome and firefox on desktop, using gitpod and heroku. It is running as expected in the gitpod terminal. 
 
-Testing that remains
-1. validate the code again once it is finished
-2. run it via heroku.
+
 
 Validator Testing
  PEP8 using www.onlinepep8checker.com
  Pylint using terminal
 
-
+Possible improvements
+It was attempted but not fully succeded to pass the variable between functions as list. So this is a possible improvement that would make the code fully PEP8 compliant. It was attempted to break up the return at the commas, manually and using a python formater but to no avail. It wa also attempted to return all the variables as part of a list and then pass that list on to the functions.
 
 **DEPLOYMENT**
-
+Deployed ot heroku at
+https://healthterminal.herokuapp.com/
 
 **CREDITS**
 BMI forumla and information
