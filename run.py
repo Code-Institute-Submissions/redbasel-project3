@@ -54,7 +54,7 @@ def health_measurements():
         percentage_change_test = int(((int(last_row[x])) - (int(start_row[x])))/(int(start_row[x])) * 100)
         header_row_x = header_row[x]
         print(f"the change in {header_row_x} is {percentage_change_test}%")
-        run_again()
+    print("Press 'Enter' to continue if running via heroku... \n")
 
 """
 this function calcualtes the bmi of the client.
@@ -152,13 +152,13 @@ def tool_menu():
         selection = int(input("Please enter your selection, between 1-3:\n"))
         if selection == 1:
             health_measurements()
-            #run_again()
+            run_again()
         elif selection == 2:
             bmi_check()
-            #run_again()
+            run_again()
         elif selection == 3:
             all_data_client()
-            #run_again()
+            run_again()
         else:
             print("invalid choice. enter between 1-3")
             tool_menu()
@@ -179,7 +179,7 @@ def run_again():
         print('Thank you for using the tool, hopefully it could assist you')
         exit()
     else:
-        print('Invalid input, please type again "yes" or "no"')
+        print("Don't use uppercase or integers.")
         run_again()
 """
 this is the function that starts the application,
