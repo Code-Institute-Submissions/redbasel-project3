@@ -37,9 +37,11 @@ def to_be_utilized():
         final_bmi = (((weight_final_value) / ((height_value) * (height_value))) * 10000)
         percentage_change_test_bmi = int(((int(final_bmi)) - (int(start_bmi)))/(int(start_bmi)) * 100)
         return select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi
-    except:
-        print("There was a error fetching the data from the google sheet.")
-        print("Check that the sheet is available creds are correct.")
+    except gspread.WorksheetNotFound:
+        print("Please enter the client name exactly as presented to you")
+        print("Restarting the application")
+        main()
+
 """
 for loop that calculates the percentage change of client data over time,
 comparing the first measurement with the last.
@@ -172,6 +174,7 @@ def run_again():
         tool_menu()
     elif answer == 'no':
         print('Thank you for using the tool, hopefully it could assist you')
+        exit()
     else:
         print('Invalid input, please type again "yes" or "no"')
         run_again()
