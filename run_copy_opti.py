@@ -64,7 +64,7 @@ and which they are presently in.
 
 
 def bmi_check():
-    select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi = to_be_utilized()
+    start_bmi, final_bmi, percentage_change_test_bmi = to_be_utilized()
     if start_bmi < 18.5:
         bmi_interval_past = "underweight"
         if final_bmi < 18.5:
