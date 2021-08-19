@@ -57,8 +57,6 @@ def to_be_utilized():
         main()
 
 
-
-
 def health_measurements():
     """
     for loop that calculates the percentage change of client data over time,
@@ -72,8 +70,6 @@ def health_measurements():
         percentage_change_test = int(((int(last_row[x])) - (int(start_row[x])))/(int(start_row[x])) * 100)
         header_row_x = header_row[x]
         print(f"the change in {header_row_x} is {percentage_change_test}%")
-
-
 
 
 def bmi_check():
@@ -142,8 +138,6 @@ def bmi_check():
     print(f"now {select_worksheet} is in the {bmi_interval_present} range. \n")
 
 
-
-
 def all_data_client():
     """
     This function prints the table of the client,
@@ -152,7 +146,6 @@ def all_data_client():
     result = to_be_utilized()
     chosen_ws_all_values = result['chosen_ws_all_values']
     pprint(chosen_ws_all_values)
-
 
 
 def tool_menu():
@@ -194,7 +187,6 @@ def tool_menu():
         run_again()
 
 
-
 def run_again():
     """
     This function main task is once tool_menu finishes,
@@ -209,7 +201,6 @@ def run_again():
     else:
         print(" Don't use uppercase or integers.")
         run_again()
-
 
 
 def main():
