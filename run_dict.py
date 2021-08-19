@@ -84,7 +84,10 @@ def bmi_check():
     Lastly, it outputs to the client in which bmi range they were,
     and which they are presently in.
     """
-    select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi = to_be_utilized()
+    result = to_be_utilized()
+    start_bmi = result['start_bmi']
+    final_bmi = result['final_bmi']
+    select_worksheet = result['select_worksheet']
     if start_bmi < 18.5:
         bmi_interval_past = "underweight"
         if final_bmi < 18.5:
@@ -146,7 +149,8 @@ def all_data_client():
     This function prints the table of the client,
     of which the first row is filled with the titles
     """
-    select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi = to_be_utilized()
+    result = to_be_utilized()
+    chosen_ws_all_values = result['chosen_ws_all_values']
     pprint(chosen_ws_all_values)
 
 
