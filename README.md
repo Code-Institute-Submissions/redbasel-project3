@@ -69,7 +69,7 @@ This feature is made possible by the toolMenu() function that fetches the worksh
 
 **Feature 2*
 Firstly, the user is asked which tool they wish to utilize and secondly which client you wish to utilize that tool. This feature uses print statements to present the options and its part of the toolMenu() function. It also features an input object, and based on the input (between 1-3) it will execute the relevant function. If the user enters something else than specified, they will be shown a error message that states “invalid choice. Enter between 1-3”
-![tool menu showcasing to the user the different tools available](docs/images/toolmenu2.png)
+![tool menu showcasing to the user the different tools available](docs/images/toolmenu2.PNG)
 
 **Feature 3*
 This feature is delivered using the health_measurements() function that takes the first and last value of the first four columns and calculates the percentage change. Then using an f” statements it prints out the percentage change for each category. Then as seen the user Is prompted with a selection regarding if they wish to continue utilizing the application.
