@@ -16,7 +16,6 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('p3clients')
 
 
-
 def to_be_utilized():
     """
     this function fetches and manipulates the values,
@@ -156,6 +155,7 @@ def tool_menu():
     print("\nWelcome to the health Terminal!")
     print("First, decide which tool you wish to utlize.")
     print("Secondly, you will be presented with the available clients.\n")
+    print("~ Tool Menu ~")
     print("1: Analyze the clients percentage change in body measurements")
     print("2: Analyze the clients past and present BMI data")
     print("3: Show all the data available")
