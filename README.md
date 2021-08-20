@@ -3,6 +3,7 @@
 - # Health Terminal
 
 Welcome to the application! :wave:
+![Image showcasing the first stage of the application](docs/images/intro2.png)
 
   > **NOTE:** This is project 3 of 5 of the Code Institute course. This project covers python and its online deployment. 
 
@@ -68,7 +69,7 @@ This feature is made possible by the toolMenu() function that fetches the worksh
 
 **Feature 2*
 Firstly, the user is asked which tool they wish to utilize and secondly which client you wish to utilize that tool. This feature uses print statements to present the options and its part of the toolMenu() function. It also features an input object, and based on the input (between 1-3) it will execute the relevant function. If the user enters something else than specified, they will be shown a error message that states “invalid choice. Enter between 1-3”
-![tool menu showcasing to the user the different tools available](docs/images/f2tm.png)
+![tool menu showcasing to the user the different tools available](docs/images/toolmenu2.png)
 
 **Feature 3*
 This feature is delivered using the health_measurements() function that takes the first and last value of the first four columns and calculates the percentage change. Then using an f” statements it prints out the percentage change for each category. Then as seen the user Is prompted with a selection regarding if they wish to continue utilizing the application.
@@ -104,8 +105,11 @@ How I have tested the code:
 * The app is run via the terminal and has been tested using both chrome and firefox on desktop, using gitpod and heroku. It is running as expected in the gitpod terminal. When testing it was discovered that heroku does not adequately run a function that is placed under a print statement. Due to this I had to alter the code to take this in consideration and add a statement targeting heroku users without affecting other users too much. To simply press enter to continue. this does trigger the error message, however. The error message was altered so that it is unobtrusive to the user experience, and more of a general instruction.
 
 ### Validators
-PEP(online screenshot)
-pylintscore(screenshot)
+* PEP8 was used via http://pep8online.com/
+
+* pylint was run and installed via the terminal. 
+![Pylint score](docs/images/pylint.png)
+
 
 #### Solved bugs
 
