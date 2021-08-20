@@ -23,26 +23,38 @@ def to_be_utilized():
     from the selected client to be used with the tools i.e. our functions
     """
     try:
+        result = {}
         select_worksheet = input('Name of the client you wish to access:\n').lower()
+        result['select_worksheet'] = select_worksheet
         terminal_chosen_worksheet = SHEET.worksheet(select_worksheet)
+        result['terminal_chosen_worksheet'] = terminal_chosen_worksheet
         chosen_ws_all_values = terminal_chosen_worksheet.get_all_values()
+        result['chosen_ws_all_values'] = chosen_ws_all_values
         header_row = chosen_ws_all_values[0]
+        result['header_row'] = header_row
         start_row = chosen_ws_all_values[1]
+        result['start_row'] = start_row
         last_row = chosen_ws_all_values[-1]
+        result['last_row'] = last_row
         start_weight_test = terminal_chosen_worksheet.cell(2, 1)
+        result['start_weight_test'] = start_weight_test
         weight_start_value = int(chosen_ws_all_values[1][0])
+        result['weight_start_value'] = weight_start_value
         weight_final_value = int(chosen_ws_all_values[-1][0])
+        result['weight_final_value'] = int(chosen_ws_all_values[-1][0])
         height_value = int(chosen_ws_all_values[-1][-2])
+        result['height_value'] = height_value
         start_bmi = (((weight_start_value) / ((height_value) * (height_value))) * 10000)
+        result['start_bmi'] = start_bmi
         final_bmi = (((weight_final_value) / ((height_value) * (height_value))) * 10000)
+        result['final_bmi'] = final_bmi
         percentage_change_test_bmi = int(((int(final_bmi)) - (int(start_bmi)))/(int(start_bmi)) * 100)
-        return select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi
+        result['percentage_change_test_bmi'] = percentage_change_test_bmi
+        return result
     except gspread.WorksheetNotFound:
         print("Please enter the client name exactly as presented to you")
         print("Restarting the application")
         main()
-
-
 
 
 def health_measurements():
@@ -50,13 +62,14 @@ def health_measurements():
     for loop that calculates the percentage change of client data over time,
     comparing the first measurement with the last.
     """
-    select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi = to_be_utilized()
+    result = to_be_utilized()
+    last_row = result['start_row']
+    start_row = result['last_row']
+    header_row = result['header_row']
     for x in range(4):
         percentage_change_test = int(((int(last_row[x])) - (int(start_row[x])))/(int(start_row[x])) * 100)
         header_row_x = header_row[x]
         print(f"the change in {header_row_x} is {percentage_change_test}%")
-
-
 
 
 def bmi_check():
@@ -67,7 +80,10 @@ def bmi_check():
     Lastly, it outputs to the client in which bmi range they were,
     and which they are presently in.
     """
-    select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi = to_be_utilized()
+    result = to_be_utilized()
+    start_bmi = result['start_bmi']
+    final_bmi = result['final_bmi']
+    select_worksheet = result['select_worksheet']
     if start_bmi < 18.5:
         bmi_interval_past = "underweight"
         if final_bmi < 18.5:
@@ -122,16 +138,14 @@ def bmi_check():
     print(f"now {select_worksheet} is in the {bmi_interval_present} range. \n")
 
 
-
-
 def all_data_client():
     """
     This function prints the table of the client,
     of which the first row is filled with the titles
     """
-    select_worksheet, terminal_chosen_worksheet, chosen_ws_all_values, header_row, start_row, last_row, start_weight_test, weight_final_value, height_value, start_bmi, final_bmi, percentage_change_test_bmi = to_be_utilized()
+    result = to_be_utilized()
+    chosen_ws_all_values = result['chosen_ws_all_values']
     pprint(chosen_ws_all_values)
-
 
 
 def tool_menu():
@@ -139,7 +153,9 @@ def tool_menu():
     This is the menu that the user will interact with initially,
     then return to again to continue using the other functions available.
     """
-    print("\nWelcome to the tool menu, these tools are at your disposal")
+    print("\nWelcome to the health Terminal!")
+    print("First, decide which tool you wish to utlize.")
+    print("Secondly, you will be presented with the available clients.\n")
     print("1: Analyze the clients percentage change in body measurements")
     print("2: Analyze the clients past and present BMI data")
     print("3: Show all the data available")
@@ -173,7 +189,6 @@ def tool_menu():
         run_again()
 
 
-
 def run_again():
     """
     This function main task is once tool_menu finishes,
@@ -183,12 +198,11 @@ def run_again():
     if answer == 'yes':
         tool_menu()
     elif answer == 'no':
-        print('Thank you for using the tool, hopefully it could assist you.')
+        print('Thank you for using the Health Terminal, hopefully it could assist you.')
         exit()
     else:
         print(" Don't use uppercase or integers.")
         run_again()
-
 
 
 def main():
