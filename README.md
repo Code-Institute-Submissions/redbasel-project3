@@ -3,7 +3,7 @@
 - # Health Terminal
 
 Welcome to the application! :wave:
-![Image showcasing the first stage of the application](docs/images/intro2.png)
+![Image showcasing the first stage of the application](docs/images/intro2.PNG)
 
   > **NOTE:** This is project 3 of 5 of the Code Institute course. This project covers python and its online deployment. 
 
@@ -108,7 +108,7 @@ How I have tested the code:
 * PEP8 was used via http://pep8online.com/
 
 * pylint was run and installed via the terminal. 
-![Pylint score](docs/images/pylint.png)
+![Pylint score](docs/images/pylint.PNG)
 
 
 #### Solved bugs
